@@ -1,0 +1,409 @@
+
+ <!DOCTYPE html>
+
+<html><head>
+<title>Hao Tang</title>
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+<style type="text/css">
+ @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+
+
+	body
+	{
+	font-family:"Roboto",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;font-weight:300;
+    	background-color : #CDCDCD;
+	}
+    	.content
+	{
+    		width : 900px;
+    		padding : 25px 30px;
+    		margin : 25px auto;
+    		background-color : #fff;
+    		box-shadow: 0px 0px 10px #999;
+    		border-radius: 15px; 
+	}	
+	table
+	{
+		padding: 5px;
+	}
+	
+	table.pub_table,td.pub_td1,td.pub_td2
+	{
+		padding: 8px;
+		width: 850px;
+        border-collapse: separate;
+        border-spacing: 15px;
+        margin-top: -5px;
+	}
+
+	td.pub_td1
+	{
+		width:50px;
+	}
+    td.pub_td1 img
+    {
+        height:120px;
+        width: 160px;
+    }
+	
+	div#container
+	{
+		margin-left: auto;
+		margin-right: auto;
+		width: 820px;
+		text-align: left;
+		position: relative;
+		background-color: #FFF;
+	}
+	div#DocInfo
+	{
+		color: #1367a7;
+		height: 158px;
+	}
+	h4,h3,h2,h1
+	{
+		color: #3B3B3B;
+	}
+	h2
+	{
+		font-size:130%;
+	}
+	p
+	{
+		color: #5B5B5B;
+		margin-bottom: 50px;
+	}
+	p.caption
+	{
+		color: #9B9B9B;
+		text-align: left;
+		width: 600px;
+	}
+	p.caption2
+	{
+		color: #9B9B9B;
+		text-align: left;
+		width: 800px;
+	}
+	#header_img
+	{
+		position: absolute;
+		top: 0px; right: 0px;
+    }
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+
+    #mit_logo {
+        position: absolute;
+        left: 646px;
+        top: 14px;
+        width: 200px;
+        height: 20px;
+    }
+   
+    table.pub_table tr {
+        outline: thin dotted #666666;
+    }
+    .papericon {
+        border-radius: 8px; 
+        -moz-box-shadow: 3px 3px 6px #888;
+        -webkit-box-shadow: 3px 3px 6px #888;
+        box-shadow: 3px 3px 6px #888;
+        width: 180px;
+	margin-top:5px;
+	margin-left:5px;
+	margin-bottom:5px;
+    }
+
+     .papericon_blank {
+
+        width: 160px;
+	margin-top:5px;
+	margin-left:5px;
+	margin-bottom:5px;
+    }
+
+    .media {
+	outline: thin dotted #666666;
+ 	margin-bottom: 15px;	
+	margin-left:10px;
+    }
+    .media-body {
+	margin-top:5px;
+	padding-left:20px;
+    }
+
+.papers-selected h5, .papers-selected h4 { display : none; }
+.papers-selected .publication { display : none; }
+.paperhi-only { display : none; }
+.papers-selected .paperhi { display : flex; }
+.papers-selected .paperlo { display : none; }
+
+.hidden>div {
+	display:none;
+}
+
+.visible>div {
+	display:block;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23931362-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23931362-2');
+</script>
+
+<script type="text/javascript">
+    var myPix = new Array("img/tanghao.jpg")
+    function choosePic() {
+        var randomNum = Math.floor(Math.random() * myPix.length);
+        document.getElementById("myPicture").src = myPix[randomNum];
+    };
+</script>
+
+<script>
+$(document).ready(function() {
+  $('.paperlo button').click(function() {
+     $('.papers-container').addClass('papers-selected');
+  });
+  $('.paperhi button').click(function() {
+     $('.papers-container').removeClass('papers-selected');
+  });
+
+
+	$('.text_container').addClass("hidden");
+
+	$('.text_container').click(function() {
+		var $this = $(this);
+
+		if ($this.hasClass("hidden")) {
+			$(this).removeClass("hidden").addClass("visible");
+			$(this).removeClass("papericon");
+		} else {
+			$(this).removeClass("visible").addClass("hidden");
+		}
+	});
+
+
+});
+</script>
+
+</head>
+
+
+<body>
+<div class="content">
+	<div id="container">
+
+	<table>
+	<tbody><tr>
+	<td><img id="myPicture" src="xxx" style="float:left; padding-right:20px" height="200px"></td>
+	<script>choosePic();</script>
+	<td>
+	<div id="DocInfo">
+		<h1>Hao Tang (唐昊)</h1>
+        Ph.D. Candidate<br>
+	School of Computer Science and Engineering, Nanjing University of Science and Technology<br>
+		Office: Room 2050, CSE Building<br>
+        Email: tanghao0918_at_njust.edu.cn<br>
+        <a href="">CV</a> &bull; <a href="">Google Scholar</a> &bull; <a href="">Github</a> &bull; <a href="">Zhihu</a><br>
+	</div><br>
+    <!--
+    <div id="mit_logo">
+        <a href="http://www.mit.edu"><img src="image/mit.gif" height="170px" class="papericon" /></a>
+    </div>
+    -->
+	</td>
+	</tr>
+	</tbody></table>
+	<br>
+
+
+	<h2>About Me</h2>
+        <p style="text-align:justify";>
+<!--        I am a Ph.D. student at <a href="https://imag-njust.net">Intelligent Media Analysis Group (IMAG)</a> supervised by Prof. <a href="https://imag-njust.net/jinhui-tang">Jinhui Tang</a>. During Dec. 2018 - Dec. 2019, I worked as a Research Intern at <a href="http://www.noahlab.com.hk/">HUAWEI NOAH'S ARK LAB</a>, supervised by Prof. <a href="https://scholar.google.com/citations?user=61b6eYkAAAAJ&hl=en">Qi Tian</a> (IEEE Fellow). Now, I am working closely with <a href="http://lingxixie.com/Home.html">Lingxi Xie</a> and <a href="https://imag-njust.net/xiangboshu">Xiangbo Shu</a>. My research mainly focuses on visual reasoning and its applications in action understanding. In particular, I am interested in group activity recognition, compositional action recognition, and action localization/detection.-->
+    	I'm Hao Tang, currently a 2nd-year Ph.D. Candidate at Nanjing University of Science and Technology in <a href="https://imag-njust.net" target="_blank" rel="external">Intelligent Media Analysis Group (IMAG)</a>, supervised by Prof. <a href="https://imag-njust.net/jinhui-tang" target="_blank" rel="external">Jinhui Tang</a> and worked closely with Prof. <a href="https://imag-njust.net/zcli/" target="_blank" rel="external">Zechao Li</a>. During Dec. 2019 - Jan. 2020, I worked as a Visiting Ph.D. Student at <a href="https://mmcheng.net/" target="_blank" rel="external">Media Computing Lab</a>, supervised by Prof. <a href="https://mmcheng.net/cmm/" target="_blank" rel="external">Ming-Ming Cheng</a>. <a href="https://github.com/CSer-Tang-hao/Paper-Reading-List" target="_blank" rel="external">My researches</a> mainly focus on Deep Learning and its applications in Computer Vision.
+		</p>
+
+	<h2>Education</h2>
+	<div>
+        <strong> Nanjing University of Science and Technology, China (Sep. 2018 - Now) </strong>
+          <a href="http://www.njust.edu.cn/" target="_blank" rel="external">
+            <img border="0" src="img/njust_logo.jpg" align="right" width="80" height="80" />
+          </a>
+        <ul>
+        <li>
+          Doctor of Philosophy (Ph.D.), Computer Science</li>
+        <li>
+          Advisor: Prof. <a href="https://imag-njust.net/jinhui-tang" target="_blank" rel="external">Jinhui Tang</a></li>
+      </ul>
+      </div>
+
+	<div>
+        <strong> Harbin Engineering University, China (Sep. 2014 - Jun. 2018) </strong>
+          <a href="http://www.hrbeu.edu.cn/" target="_blank" rel="external">
+            <img border="0" src="img/heu_logo.png" align="right" width="80" height="80" />
+          </a>
+        <ul>
+        <li>
+          Bachelor of Engineering (B.E), Automation</li>
+        <li>
+          Graduated with Excellent Thesis Award</li>
+      </ul>
+      </div>
+
+    <h2>News</h2>
+    <ul>
+<!--    	<li>2020.08.17: One paper is accepted by China MM 2020 and recommended to be published on Multimedia System.</li>-->
+<!--    	<li>2020.08.05: I achieve the Chinese Government Scholarship and will work with Prof. Wanli Ouyang at The University of Sydney in the next two years.</li>-->
+<!--    	<li>2020.07.03: One paper is accepted by ECCV 2020.</li>-->
+<!--    	<li>2020.05: Selected as the Outstanding PhD of NJUST.</li>-->
+<!--    	<li>2019.05: I give a talk about GAR at the Noah's Ark Lab, Huawei Inc.</li>-->
+		<li>2020.08: One paper about few-shot learning is accepted to ACM Multimedia'20 </li>
+    </ul>
+
+	<h2>&nbsp;Interests</h2>
+	<ul>
+	<li> High-Level Vision: Few-shot Learning, Fine-Grained Classification </li>
+	<li> Low-Level Vision: Salient Object Detection, Image Enhancement  </li>
+	</ul>
+
+
+
+<!--<div class="papers-container papers-selected"> -->
+<!--	<h5 class="paperlo">All Publications<button type="button" class="ml-3 btn btn-light"> Show selected</button></h5>-->
+<!--	<h5 class="paperhi paperhi-only">Selected Publications<button type="button" class="ml-3 btn btn-light"> Show all</button></h5>-->
+<!--	<h5 class="pt-2 pb-1">2020</h5>	-->
+
+
+<!--	<div class="publication media paperhi">-->
+<!--           <img src="img/SAM.png" height="100" width="200" class="papericon">-->
+<!--           <div class="media-body"><b>Social Adaptive Module for Weakly-supervised-->
+<!--Group Activity Recognition</b><br>-->
+<!--           <b>Rui Yan</b>, Lingxi Xie, Jinhui Tang, Xiangbo Shu, and Qi Tian<br>-->
+<!--           ECCV 2020 (accepted). <strong style="color:red">The dataset has been published. See the Preject page for more details.</strong><br>-->
+<!--           [<a href="https://arxiv.org/pdf/2007.09470">PDF</a>][<a href="SAM.html">Project</a>][<a href="https://github.com/ruiyan1995/Weakly-supervised-Group-Activiy-Recognition">Code</a>]-->
+<!--	</div></div>-->
+
+<!--	<div class="publication media paperhi">-->
+<!--           <img src="img/HiGCIN.png" height="100" width="200" class="papericon">-->
+<!--           <div class="media-body"><b>HiGCIN: Hierarchical Graph-based Cross-->
+<!--Inference Network for Group Activity Recognition</b><br>-->
+<!--           <b>Rui Yan</b>, Lingxi Xie, Jinhui Tang, Xiangbo Shu, and Qi Tian<br>-->
+<!--           Under review, 2020<br>-->
+<!--           [<a href="xxx">PDF</a>]-->
+<!--	</div></div>-->
+
+<!--	-->
+<!--	<div class="publication media paperhi">-->
+<!--           <img src="img/SRM.png" height="100" width="200" class="papericon">-->
+<!--           <div class="media-body"><b>Storyboard Region Relationship Model for-->
+<!--Group Activity Recognition</b><br>-->
+<!--           Boning Li, Xiangbo Shu, <b>Rui Yan</b>, and Jinhui Tang<br>-->
+<!--           Under review, 2020<br>-->
+<!--           [<a href="xxx">PDF</a>]-->
+<!--	</div></div>-->
+
+
+<!--	<div class="publication media paperhi">-->
+<!--           <img src="img/CCGL.png" height="100" width="200" class="papericon">-->
+<!--           <div class="media-body"><b>Coherence Constrained Graph LSTM for Group Activity Recognition</b><br>-->
+<!--           Jinhui Tang, Xiangbo Shu, <b>Rui Yan</b>, and Liyan Zhang<br>-->
+<!--           IEEE T-PAMI, 2019<br>-->
+<!--           [<a href="xxx">PDF</a>]-->
+<!--	</div></div>-->
+
+<!--	<div class="publication media paperhi">-->
+<!--           <img src="img/PC-TDM.jpg" height="100" width="200" class="papericon">-->
+<!--           <div class="media-body"><b>Participation-Contributed Temporal Dynamic Model for Group Activity Recognition</b><br>-->
+<!--           <b>Rui Yan</b>, Jinhui Tang, Xiangbo Shu, Zechao Li and Qi Tian<br>-->
+<!--           ACM MM 2018 (Oral) ~8.5% <br>-->
+<!--           [<a href="https://www.researchgate.net/profile/Rui_Yan31/publication/328372578_Participation-Contributed_Temporal_Dynamic_Model_for_Group_Activity_Recognition/links/5bed27684585150b2bb79e69/Participation-Contributed-Temporal-Dynamic-Model-for-Group-Activity-Recognition.pdf">PDF</a>][<a href="https://github.com/ruiyan1995/Group-Activity-Recognition">Code</a>][<a href="https://github.com/ruiyan1995/ruiyan1995.github.io/raw/master/mm2018_korea.pptx">Slides</a>]-->
+<!--	</div></div>-->
+
+<!--	-->
+
+<!--	<div class="publication media paperhi">-->
+<!--           <img src="img/Skip-Attention.jpg" height="100" width="200" class="papericon">-->
+<!--           <div class="media-body"><b>Skip-Attention Encoder-Decoder Framework for Human Motion Prediction</b><br>-->
+<!--           Ruipeng Zhang, Xiangbo Shu, <b>Rui Yan</b>, Jiachao Zhang and Yan Song<br>-->
+<!--           China MM, 2020<br>-->
+<!--           [<a href="">PDF</a>]-->
+<!--	</div></div>-->
+
+<!--	<div class="publication media paperhi">-->
+<!--           <img src="img/none.jpeg" height="100" width="200" class="papericon">-->
+<!--           <div class="media-body"><b>A Feature Selection Method for Projection Twin Support Vector Machine</b><br>-->
+<!--           <b>Rui Yan</b>, Qiaolin Ye, Liyan Zhang, Ning Ye and Xiangbo Shu<br>-->
+<!--           Neural Processing Letters, 2016<br>-->
+<!--           [<a href="https://www.researchgate.net/profile/Rui_Yan31/publication/317769500_A_Feature_Selection_Method_for_Projection_Twin_Support_Vector_Machine/links/59b1370d458515a5b4890247/A-Feature-Selection-Method-for-Projection-Twin-Support-Vector-Machine.pdf">PDF</a>]-->
+<!--	</div></div>-->
+
+
+
+<div class="papers-container papers-selected">
+	<h5 class="paperlo">All Publications<button type="button" class="ml-3 btn btn-light"> Show selected</button></h5>
+	<h5 class="paperhi paperhi-only">Selected Publications</h5>
+	<h5 class="pt-2 pb-1">2020</h5>
+	<div class="publication media paperhi">
+           <img src="img/BlockMix.jpg" height="120" width="200" class="papericon">
+           <div class="media-body">
+			   <b>BlockMix: Meta Regularization and Self-Calibrated Inference for Metric-Based Meta-Learning</b><br>
+           <strong>Hao Tang</strong>, Zechao Li, Zhimao Peng, and Jinhui Tang <br/>
+           ACM MM 2020  <strong style="color:red">Oral Presentation</strong><br/>
+           [<a href="">PDF</a>][<a href="https://acmmm2020video.webxinxin.com/VideoParameter">Video</a>]
+	</div>
+</div>
+
+
+</div>
+    <h2>Honors</h2>
+	<div>
+        <ul>
+            <li>Excellent Bachelor Thesis at Harbin Engineering University, 2018</li>
+            <li>Excellent Graduate of Harbin Engineering University, 2018</li>
+            <li>First-class Innovation Scholarship,Ministry of Industry and Information Technology of China, 2017</li>
+        </ul>    
+	</div>
+
+	<h2>Professional Services</h2>
+	<div>
+		<ul>
+			<li>
+				TPC Member for IEEE MIPR 2020,2021.
+			</li>
+			<li>
+				Invited Reviewer for TMM, TVC, KSII TIIS.
+			</li>
+			<li>
+				External Reviewer for IEEE MIPR 2019, IScIDE 2019.
+			</li>
+		</ul>
+	</div>
+
+	<h2>Cooperation & Communication</h2>
+		<ul>
+			<li>
+				NJUST: <a href="https://ruiyan1995.github.io/" target="_blank" rel="external">Rui Yan</a>, Dong Zhang, Lu Jin, Di Wang
+			</li>
+			<li>
+				NKU: Zhimao Peng
+			</li>
+		</ul>
+</div>
+
+
+</div>
+<a href='http://bzhou.ie.cuhk.edu.hk/' target="_blank" rel="external">Source stolen from here</a>
+</body></html>
