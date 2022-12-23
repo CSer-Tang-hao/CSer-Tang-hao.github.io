@@ -173,17 +173,15 @@
         <p>
           <div style="text-align: justify; display: block; margin-right: auto;">
           <p>
-          Recent progress on RGB-Thermal Saliency Object Detection (RGB-T SOD) excessively focuses on cross-modality feature aggregation but ignores the exploitation of defective features of specific modalities, resulting in poor performance in challenging scenarios.
-          In fact, modality-specific features play a decisive role in some extreme scenarios, but few studies are devoted to this.
-          In this work, we rethink the existing models from the perspective of modality knowledge exploitation, and propose a highly robust <b>Complementary Triple-Decoder Network (CTDNet)</b>, following the <b>encoder-shared decoder-separated</b> paradigm.
-          Generally, CTDNet consists of two modality-specific branches that separately excavate RGB- and thermal-modality inherent cues and a modality-complementary branch that integrates modality-informative cues from different modalities.
-          To be specific, we introduce a <b>Modality-induced Feature Modulator (MFM)</b> to narrow the intrinsic inter-modality discrepancy and suppress negative effects of defective data during the shared encoding phase.
-          In the separated decoding phase, we develop a <b>Modality-aware Dynamic Reconstruction Module (MDRM)</b> to dynamically aggregate multi-level saliency-related cues from RGB- and thermal-modality.
-          To fully capture rich context, we also employ a <b>Residual Atrous Spatial Pyramid Module (RASPM)</b> as the infrastructure of triple decoders.
-        We then combine three salient maps derived by CTDNet via a <b>decoder-cooperative fusion strategy</b> to generate a high-quality full-resolution saliency map in the end of triple decoders.
-          Furthermore, we raise a more comprehensive RGB-T SOD benchmark covering various challenging scenarios in the real world, named <b>VT-IMAG</b>, to further evaluate the robustness and stability.
-          Extensive experiments on public datasets and VT-IMAG demonstrate that CTDNet performs more favorable robustness and generality against state-of-the-arts in challenging scenarios.
-          </p>
+          Recent work on RGB-Thermal Saliency Object Detection (RGB-T SOD) excessively focuses on cross-modality feature aggregation but inevitably ignores defective feature exploitation of specific modalities, resulting in unsatisfactory performance in some scenarios.
+          In this work, from the perspective of knowledge exploitation, we propose a highly robust <b>Complementary Triple-Decoder Network</b> (CTDNet) following an <b>encoder-shared decoder-separated</b> pattern.
+          Concretely, CTDNet mainly consists of two branches, where one modality-specific branch is used to explore RGB- and T-modality inherent cues, and the other modality-complementary branch is used to integrate the informative cues from these two modalities.
+          In the shared encoding phase, we introduce a <b>Modality-induced Feature Modulator</b> (MFM) to narrow the intrinsic inter-modality discrepancy and suppress the negative effects of the defective samples.
+          In the separated decoding phase, we propose a <b>Modality-aware Dynamic Reconstruction Module</b> (MDRM) to dynamically aggregate multi-level saliency-related cues from both RGB and thermal modalities.
+          At the end of the triple decoder, we jointly exploit salient maps derived by CTDNet via a <b>decoder-cooperative fusion strategy</b> to generate a high-quality full-resolution saliency map for predictions.
+          Moreover, we collect a comprehensive RGB-T SOD benchmark covering various challenging scenarios in the real world, named <b>VT-IMAG</b>, to further evaluate robustness and stability.
+          Extensive experiments on public benchmarks and our VT-IMAG validate that CTDNet performs more robustly and generally against state-of-the-art in both commonplace and challenging scenarios.
+      </p>
         </p>
       </div>
       <br/>
@@ -201,8 +199,9 @@
            <div class="section">
         <div style="text-align: justify; display: block; margin-right: auto;">
 <!--          <ol>-->
-        <p>The overview architecture of the proposed Complementary Triple-Decoder Network (CTDNet).
-          It follows an efficient encoder-shared decoder-separated paradigm and is mainly composed of two modality-specific branches and one modality-complementary branch to predict RGB-specific, Thermal-specific, and modality-shared saliency maps, respectively.</p>
+        <p>
+            An overview of the proposed CTDNet. CTDNet is mainly composed of two branches, where one modality-complementary branch predicts a modality-shared saliency map, and another modality-specific branch predicts RGB- and Thermal-specific saliency maps, respectively.
+        </p>
 <!--          </ol>-->
       </div>
         </div>
@@ -253,10 +252,10 @@
         <br>
         <div style="text-align: justify; display: block; margin-right: auto;">
         <ol>
-          <li><p>We introduce a novel <b>encoder-shared and decoder-separated</b> paradigm to slove weak robustness of existing RGB-T SOD models. Following this paradigm, we propose a highly robust <b>Complementary Triple-Decoder Network (CTDNet)</b> to achieve the effective integration of modality-complementary cues and the deep excavation of modality-specific cues.</p></li>
-          <li><p>In the share encoding phase, we introduce a <b>modality-induced feature modulator</b> to narrow the intrinsic modality discrepancy and filter redundant or even disturbed information. </p></li>
-          <li><p>In the separated decoding phase, we develop a <b>modality-aware dynamic reconstruction module</b> that dynamically weights saliency-related features and suppress the saliency bias, a <b>residual atrous spatial pyramid module</b> that covers global context cues, and a <b>decoder-cooperative fusion strategy</b> to predict the final high-quality saliency map.</p></li>
-          <li><p>We release a comprehensive benchmark with various challenging scenarios as a new testbed for the faithful RGB-T SOD evaluation, termed <b>VT-IMAG</b>, which would be available to the research community. </p></li>
+            <li><p>An <b>encoder-shared and decoder-separated</b> paradigm is proposed to solve the weak <b>robustness</b> of existing RGB-T SOD models. Following this paradigm, we propose a highly robust CTDNet to accomplish the effective integration of <b>modality-complementary cues</b> and the deep excavation of <b>modality-specific cues</b>.</p></li>
+            <li><p>We propose a <b>modality-induced feature modulator</b> to narrow the intrinsic modality discrepancy and filter redundant or even disturbing information.</p></li>
+            <li><p>We develop a <b>modality-aware dynamic reconstruction module</b> that dynamically weights saliency-related features and suppresses the saliency bias, a <b>residual atrous spatial pyramid module</b> that covers global context cues, and a decoder-cooperative fusion strategy to predict the final high-quality saliency map.</p></li>
+          <li><p>We release a comprehensive benchmark with various challenging scenarios as a new testbed for the faithful RGB-T SOD evaluation, termed <b>VT-IMAG</b>, which would be available to the research community.</p></li>
         </ol>
       </div>
       <br/>
@@ -338,7 +337,7 @@ the proposed VT-IMAG.</p>
             <td width="30%">
               <center>
                 <a href="" target="_blank" class="imageLink"><img src="./project/icon_github.png" ,="" width="40%"></a><br><br>
-                <a href="" target="_blank">Code and Model</a>
+                <a href="" target="_blank">Code</a>
               </center>
             </td>
             </tr>
