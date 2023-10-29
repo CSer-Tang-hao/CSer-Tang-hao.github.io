@@ -175,14 +175,16 @@
           <p>
           RGB-Thermal Salient Object Detection (RGB-T SOD) aims to pinpoint prominent objects within aligned pairs of visible and thermal infrared images.
           A key challenge lies in bridging the inherent disparities between RGB and Thermal modalities for effective saliency map prediction.
-          Traditional encoder-decoder architectures often overemphasize cross-modality feature interactions, overlooking noise from defective modalities, which leads to suboptimal performance in complex scenarios.
-          Inspired by hierarchical human visual processing, we propose the <b>MaTriNet</b>, a robust Modality-aware Triple-Decoder Network employing a <b>Divide-and-Conquer</b> strategy.
-          It incorporates a <b>Modality-induced Feature Modulator</b> (MFM) to minimize inter-modality discrepancies and mitigate the impact of defective samples.
-          A foundational <b>Residual Atrous Spatial Pyramid Module</b> (RASPM) within the separated decoders enlarges the receptive field, capturing multi-scale contextual information.
-          Moreover, a <b>Modality-aware Dynamic Aggregation Module</b> (MDAM) within our modality-complementary decoder dynamically aggregates saliency-related cues from both modality-specific decoders.
-          Leveraging the above parallel triple-decoder framework, we further refine salient maps derived from different branches through a <b>decoder-cooperative fusion strategy</b>, yielding a high-quality, full-resolution saliency map for the final prediction.
+          Traditional encoder-decoder architectures, while designed for cross-modality feature interactions, may not have adequately considered the robustness against noise originating from defective modalities, thereby leading to suboptimal performance in complex scenarios.
+          Inspired by hierarchical human visual systems, we propose the <b>ConTriNet</b>, a robust Confluent Triple-Flow Network employing a <b>Divide-and-Conquer</b> strategy.
+          This framework utilizes a unified encoder with specialized decoders, each addressing different subtasks of exploring modality-specific and modality-complementary information for RGB-T SOD, thereby enhancing the final saliency map prediction.
+          Specifically, <b>ConTriNet</b> comprises three flows: two modality-specific flows explore cues from RGB and Thermal modalities, and a third modality-complementary flow integrates cues from both modalities.
+          <b>ConTriNet</b> presents several notable advantages. It incorporates a <b>Modality-induced Feature Modulator</b> (MFM) in the modality-shared union encoder to minimize inter-modality discrepancies and mitigate the impact of defective samples.
+          Additionally, a foundational <b>Residual Atrous Spatial Pyramid Module</b> (RASPM) in the separated flows enlarges the receptive field, allowing for the capture of multi-scale contextual information.
+          Furthermore, a <b>Modality-aware Dynamic Aggregation Module</b> (MDAM) in the modality-complementary flow dynamically aggregates saliency-related cues from both modality-specific flows.
+          Leveraging the proposed parallel triple-flow framework, we further refine saliency maps derived from different flows through a <b>flow-cooperative fusion strategy</b>, yielding a high-quality, full-resolution saliency map for the final prediction.
           To evaluate the robustness and stability of our approach, we collect a comprehensive RGB-T SOD benchmark, <b>VT-IMAG</b>, covering various real-world challenging scenarios.
-          Extensive experiments on public benchmarks and our VT-IMAG dataset confirm that MaTriNet consistently outperforms state-of-the-art competitors in both common and challenging scenarios, even when dealing with incomplete modality data.
+          Extensive experiments on public benchmarks and our VT-IMAG dataset confirm that <b>ConTriNet</b> consistently outperforms state-of-the-art competitors in both common and challenging scenarios, even when dealing with incomplete modality data.
       </p>
         </p>
       </div>
@@ -202,7 +204,7 @@
         <div style="text-align: justify; display: block; margin-right: auto;">
 <!--          <ol>-->
         <p>
-            An overview of the proposed <b>MaTriNet</b>. MaTriNet is mainly composed of two branches, where one modality-complementary branch predicts a modality-complementary saliency map, and another modality-specific branch predicts RGB- and Thermal-specific saliency maps, respectively.
+            An overview of the proposed <b>ConTriNet</b>. ConTriNet comprises three main flows: a modality-complementary flow that predicts a modality-complementary saliency map, and two modality-specific flows that predict RGB- and Thermal-specific saliency maps, respectively.
         </p>
 <!--          </ol>-->
       </div>
@@ -254,10 +256,10 @@
         <br>
         <div style="text-align: justify; display: block; margin-right: auto;">
         <ol>
-            <li><p>An <b>encoder-shared and decoder-separated</b> paradigm is proposed to solve the weak <b>robustness</b> of existing RGB-T SOD models. Following this paradigm, we propose a highly robust CTDNet to accomplish the effective integration of <b>modality-complementary cues</b> and the deep excavation of <b>modality-specific cues</b>.</p></li>
-            <li><p>We propose a <b>modality-induced feature modulator</b> to narrow the intrinsic modality discrepancy and filter redundant or even disturbing information.</p></li>
-            <li><p>We develop a <b>modality-aware dynamic reconstruction module</b> that dynamically weights saliency-related features and suppresses the saliency bias, a <b>residual atrous spatial pyramid module</b> that covers global context cues, and a decoder-cooperative fusion strategy to predict the final high-quality saliency map.</p></li>
-          <li><p>We release a comprehensive benchmark with various challenging scenarios as a new testbed for the faithful RGB-T SOD evaluation, termed <b>VT-IMAG</b>, which would be available to the research community.</p></li>
+            <li><p>A novel <b>Divide-and-Conquer</b> strategy is introduced to address the weak robustness of current RGB-T SOD models. Within this context, we propose the <b>ConTriNet</b>, specified for effective fusing modality-complementary cues and deeply mining modality-specific cues.</p></li>
+            <li><p>An MFM is embedded in our union encoder to effectively narrow modality discrepancies and filter redundant or potentially disruptive information. Concurrently, an MDAM has been engineered into our modality-complementary flow to dynamically prioritize salient-related features from modality-specific flows while mitigating salient bias.</p></li>
+            <li><p>We present the RASPM, a cornerstone for our parallel flows that offers a larger yet compact receptive field. Stemming from this, we further introduce a flow-cooperative fusion strategy, aiming for a refined, comprehensive saliency map prediction.</p></li>
+          <li><p>A comprehensive benchmark with various challenging scenarios is contributed to the field as a new testbed for the faithful RGB-T SOD evaluations.</p></li>
         </ol>
       </div>
       <br/>
